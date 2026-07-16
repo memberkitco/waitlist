@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const geist = Geist({
-  weight: "400",
-  variable: "--font-share-tech",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
@@ -28,10 +28,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-share-tech)]">
+      <body className="min-h-full flex flex-col font-[family-name:var(--font-geist-sans)]">
         {children}
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
