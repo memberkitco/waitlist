@@ -261,10 +261,7 @@ export default function WaitlistPage() {
             [ The All-In-One Creator Commerce Platform ]
           </motion.p>
 
-          <motion.h1
-            variants={fadeInUp}
-            className="text-[clamp(2.8rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter"
-          >
+          <h1 className="text-[clamp(2.8rem,7vw,6.5rem)] font-black leading-[0.92] tracking-tighter">
             <span className="block">Sell digital</span>
             <span className="block">
               <AnimatePresence mode="wait">
@@ -281,7 +278,7 @@ export default function WaitlistPage() {
               </AnimatePresence>
             </span>
             <span className="block text-[#666]">Get paid instantly.</span>
-          </motion.h1>
+          </h1>
 
           <motion.p variants={fadeInUp} className="mt-8 text-lg md:text-xl text-[#888] max-w-xl leading-relaxed">
             Replace your fragmented stack of 5–10 tools with one AI-powered platform.
@@ -521,12 +518,12 @@ export default function WaitlistPage() {
               <motion.p variants={fadeInUp} className="text-xs font-mono uppercase tracking-[0.4em] text-[#F5D547] mb-4">
                 [ 04 — Join the Waitlist ]
               </motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-black leading-[0.95] tracking-tight uppercase">
+              <h2 className="text-3xl md:text-5xl font-black leading-[0.95] tracking-tight uppercase">
                 Claim your <span className="text-[#F5D547]">spot.</span>
-              </motion.h2>
-              <motion.p variants={fadeInUp} className="mt-4 text-[#888] mb-10">
+              </h2>
+              <p className="mt-4 text-[#888] mb-10">
                 500 founding spots. Lifetime perks. No credit card required.
-              </motion.p>
+              </p>
 
               <motion.form
                 variants={fadeInUp}
