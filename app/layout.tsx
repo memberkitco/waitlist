@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Share_Tech } from "next/font/google";
+import { Geist_Mono, Geist } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const shareTech = Share_Tech({
+const shareTech = Geist({
   weight: "400",
   variable: "--font-share-tech",
   subsets: ["latin"],
