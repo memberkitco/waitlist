@@ -73,17 +73,17 @@ export async function simulateSubmission(email?: string): Promise<{ position: nu
 // --- Animation Variants ---
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] as const },
+    transition: { duration: 0.4, ease: [0.25, 0.4, 0.25, 1] as const },
   },
 };
 
 const staggerContainer = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
+  visible: { transition: { staggerChildren: 0.08 } },
 };
 
 const scaleIn = {
@@ -148,23 +148,26 @@ function GridBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = document.documentElement.scrollHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
+    // Defer canvas init to avoid blocking LCP
+    const initTimeout = setTimeout(() => {
+      const resize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = document.documentElement.scrollHeight;
+      };
+      resize();
+      window.addEventListener("resize", resize);
 
-    const handleMouse = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-    window.addEventListener("mousemove", handleMouse);
+      const handleMouse = (e: MouseEvent) => {
+        mouseRef.current = { x: e.clientX, y: e.clientY };
+      };
+      window.addEventListener("mousemove", handleMouse);
 
-    draw();
+      draw();
+    }, 1000); // Defer 1s to not block LCP
+
     return () => {
+      clearTimeout(initTimeout);
       cancelAnimationFrame(animRef.current);
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMouse);
     };
   }, [draw]);
 
