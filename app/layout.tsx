@@ -3,7 +3,7 @@ import { Geist_Mono, Geist } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const shareTech = Geist({
+const geist = Geist({
   weight: "400",
   variable: "--font-share-tech",
   subsets: ["latin"],
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${shareTech.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geist.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-[family-name:var(--font-share-tech)]">
         {children}
