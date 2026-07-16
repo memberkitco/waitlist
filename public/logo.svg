@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#F5D547">
+  <!--
+    memberkit.co — Logo v2
+    
+    Concept: A rounded square "container" (the kit/box) with a bold
+    negative-space "M" cut through it. The box = your all-in-one toolkit.
+    The M = memberkit. Simple, iconic, works at 16px or 512px.
+  -->
+  <!-- Outer rounded square (the kit) -->
+  <rect x="1" y="1" width="30" height="30" rx="4" fill="#F5D547"/>
+  <!-- Negative space M carved out -->
+  <path d="M6 26V8h4l6 9 6-9h4v18h-4V14l-6 9-6-9v12H6z" fill="#0a0a0a"/>
+</svg>
